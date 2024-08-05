@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex flex-column gap-3 justify-content-center align-items-center">
+    <div class="w-100 d-flex justify-content-end">
+         <button type="button" onclick="openAddList()" class="btn btn-primary">Add List</button>
+    </div>
+    <table class="table table-light table-striped table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date Created</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @await Html.PartialAsync("Todos/_AllTodos")
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    function openAddList() { 
+        $('#mdlAddList').modal('show');
+    };
+</script>
+
+@section modals {
+    @Html.Partial("Modal")
+}

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TodoList.Models.Todo>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var todo in Model)
+    {
+        <tr>
+            <td>@todo.Name</td>
+            <td>@todo.Description</td>
+            <td>@todo.created_at</td>
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td colspan="4">No records found</td>
+    </tr>
+}
+
+
+
